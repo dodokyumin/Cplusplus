@@ -3,30 +3,29 @@
 int main(){
 	
 	FILE *fp = fopen("report.csv","r");
-	const int MAX = 100;
-	int cell = 0;
-	int orderLinuxTimeArr[MAX], orderDayArr[MAX], orderTimeArr[MAX], ticketAmountArr[MAX], totPriceArr[MAX];
-	char *ReciTicketTypeArr[MAX];
-	char *ReciTicketPreferArr[MAX];
+	int orderLinuxTimeArr[99999], orderDayArr[99999], orderTimeArr[99999], ticketAmountArr[100], totPriceArr[100];
+	char* ReciTicketTypeArr[100][2][100] = {" "};
+	char* ReciTicketPreferArr[100][2][100] = {" "};
 	
-	/*while(fscanf(fp,"%d,%d,%d,%s,%s,%d,%d",&orderLinuxTimeArr[cell], &orderDayArr[cell], &orderTimeArr[cell], 
-		&ReciTicketTypeArr[cell], &ReciTicketPreferArr[cell], &ticketAmountArr[cell], &totPriceArr[cell]) != -1){
+	int cell = 0;
+	
+	while(feof(fp) == 0){
+		
+		fscanf(fp, "%d, %d, %d, %s, %s, %d, %d",&orderLinuxTimeArr[cell],&orderDayArr[cell],&ticketAmountArr[cell],
+			&ReciTicketTypeArr[cell][0],&ReciTicketPreferArr[cell][0],
+			&ticketAmountArr[cell],&totPriceArr[cell],&totPriceArr[cell]);
+		
+		printf("%d,%d,%d,%s,%s,%d,%d\n",orderLinuxTimeArr[cell],orderDayArr[cell],ticketAmountArr[cell],
+			ReciTicketTypeArr[cell][0],ReciTicketPreferArr[cell][0],
+			ticketAmountArr[cell],totPriceArr[cell],totPriceArr[cell]);
 		
 		cell++;
+		
 	}
 	fclose(fp);
-	*/
-	for(int i = 0; i < 2; i++){
-		fscanf(fp,"%d,%d,%d,%s,%s,%d,%d",&orderLinuxTimeArr[i], &orderDayArr[i], &orderTimeArr[i], 
-		&ReciTicketTypeArr[i], &ReciTicketPreferArr[i], &ticketAmountArr[i], &totPriceArr[i]);
-	} 
-	fclose(fp);
+	 
+
 	
-	//문제없음 
-	for(int index=0; index < cell; index++){
-		printf("%d,%d,%d,%s,%s,%d,%d\n",orderLinuxTimeArr[index], orderDayArr[index],orderTimeArr[index], 
-		ReciTicketTypeArr[index], ReciTicketPreferArr[index],ticketAmountArr[index], totPriceArr[index]);
-	}
 	
 	return 0;
 }
