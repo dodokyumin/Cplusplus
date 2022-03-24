@@ -2,7 +2,7 @@
 
 int main(){
 	
-	FILE *fp = fopen("report.csv","r");
+	FILE *fp = fopen("example.csv","r");
 	const int MAX = 100;
 	int count = 0;
 	int year[MAX], month[MAX], day[MAX], ticketTimeCaseArr[MAX],
