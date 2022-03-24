@@ -19,12 +19,12 @@ int main(){
 		{60000, 30000}
 	};
 	
-	char* ReciTicketTypeArr[2][2] = {
+	char *ReciTicketTypeArr[2][2] = {
 		{"종합이용권(주간)","놀이공원이용권(주간)"},
 		{"종합이용권(야간)","놀이공원이용권(야간)"}
 	};
 	
-	char* ReciTicketPreferArr[5] = {
+	char *ReciTicketPreferArr[5] = {
 		"없음","장애인","국가유공자","휴가장병","임산부"
 	};
 

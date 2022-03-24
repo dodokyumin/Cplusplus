@@ -6,17 +6,23 @@ int main(){
 	const int MAX = 100;
 	int cell = 0;
 	int orderLinuxTimeArr[MAX], orderDayArr[MAX], orderTimeArr[MAX], ticketAmountArr[MAX], totPriceArr[MAX];
-	char* ReciTicketTypeArr[MAX];
-	char* ReciTicketPreferArr[MAX];
+	char *ReciTicketTypeArr[MAX];
+	char *ReciTicketPreferArr[MAX];
 	
-	while(fscanf(fp,"%d,%d,%d,%s,%s,%d,%d",&orderLinuxTimeArr[cell], &orderDayArr[cell], &orderTimeArr[cell], 
+	/*while(fscanf(fp,"%d,%d,%d,%s,%s,%d,%d",&orderLinuxTimeArr[cell], &orderDayArr[cell], &orderTimeArr[cell], 
 		&ReciTicketTypeArr[cell], &ReciTicketPreferArr[cell], &ticketAmountArr[cell], &totPriceArr[cell]) != -1){
 		
 		cell++;
 	}
 	fclose(fp);
-
-		
+	*/
+	for(int i = 0; i < 2; i++){
+		fscanf(fp,"%d,%d,%d,%s,%s,%d,%d",&orderLinuxTimeArr[i], &orderDayArr[i], &orderTimeArr[i], 
+		&ReciTicketTypeArr[i], &ReciTicketPreferArr[i], &ticketAmountArr[i], &totPriceArr[i]);
+	} 
+	fclose(fp);
+	
+	//문제없음 
 	for(int index=0; index < cell; index++){
 		printf("%d,%d,%d,%s,%s,%d,%d\n",orderLinuxTimeArr[index], orderDayArr[index],orderTimeArr[index], 
 		ReciTicketTypeArr[index], ReciTicketPreferArr[index],ticketAmountArr[index], totPriceArr[index]);
